@@ -9,7 +9,20 @@
 	"description": "Example block scaffolded with Create Block tool.",
 	"example": {},
 	"supports": {
-		"html": false
+		"color": {
+            "background": true,
+            "text": true
+        },
+		"align": true,
+		"html": false,
+		"typography": {
+            "fontSize": true
+        },
+		"spacing": {
+			"margin": true,  
+			"padding": true, 
+			"blockGap": true
+		}
 	},
 	"textdomain": "page-not-found-block",
 	"editorScript": "file:./index.js",

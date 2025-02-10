@@ -1,26 +1,21 @@
 <?php 
 
-function getCurrentUrl() {
-    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
-    $host = $_SERVER['HTTP_HOST'];
-    $uri = $_SERVER['REQUEST_URI'];
+if (!function_exists('extractLastPart')){
+    function extractLastPart($url) {
+        // Remove trailing slash if present
+        $url = rtrim($url, '/');
     
-    return "$uri";
+        // Extract the last part of the URL
+        $parts = explode('/', $url);
+        return end($parts);
+    }
 }
 
-
-function extractLastPart($url) {
-    // Remove trailing slash if present
-    $url = rtrim($url, '/');
-
-    // Extract the last part of the URL
-    $parts = explode('/', $url);
-    return end($parts);
-}
 
 $lastPart = extractLastPart($_SERVER['REQUEST_URI']);
-echo $lastPart; 
-
-
 
 ?>
+
+<p <?php echo get_block_wrapper_attributes(); ?>><?php echo $lastPart; ?></p>
+
+
