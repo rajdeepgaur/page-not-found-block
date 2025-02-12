@@ -8,6 +8,20 @@
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
+  "attributes": {
+    "showPrefix": {
+      "type": "boolean"
+    },
+    "prefix": {
+      "type": "string"
+    },
+    "showSuffix": {
+      "type": "boolean"
+    },
+    "suffix": {
+      "type": "string"
+    }
+  },
   "supports": {
     "color": {
       "background": true,
