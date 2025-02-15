@@ -11,7 +11,9 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
+
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,13 +31,49 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
+export default function Edit({ attributes, setAttributes }) {
+	const { showPrefix, prefix, showSuffix, suffix } = attributes;
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Page Not Found Block – hello from the editor!',
-				'page-not-found-block'
-			) }
-		</p>
+		<>
+			<InspectorControls>
+				<PanelBody title={__('Settings', 'page-not-found-block')}>
+					<ToggleControl
+						checked={!!showPrefix}
+						label={__(
+							'Show Prefix',
+							'page-not-found--block'
+						)}
+						onChange={() =>
+							setAttributes({
+								showPrefix: !showPrefix,
+							})
+						}
+					/>
+					{showPrefix && (
+						<TextControl
+							__nextHasNoMarginBottom
+							__next40pxDefaultSize
+							label={__(
+								'prefix',
+								'page-not-found-block'
+							)}
+							value={prefix || ''}
+							onChange={(value) =>
+								setAttributes({ prefix: value })
+							}
+						/>
+					)}
+
+				</PanelBody>
+			</InspectorControls>
+
+			<p {...useBlockProps()}>
+				{__(
+					'Page Not Found Block – hello from the editor!',
+					'page-not-found-block'
+				)}
+			</p>
+		</>
 	);
 }
