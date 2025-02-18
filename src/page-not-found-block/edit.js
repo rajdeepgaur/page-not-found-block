@@ -50,6 +50,18 @@ export default function Edit({ attributes, setAttributes }) {
 							})
 						}
 					/>
+					<ToggleControl
+						checked={!!showSuffix}
+						label={__(
+							'Show Suffix',
+							'page-not-found--block'
+						)}
+						onChange={() =>
+							setAttributes({
+								showSuffix: !showSuffix,
+							})
+						}
+					/>
 					{showPrefix && (
 						<TextControl
 							__nextHasNoMarginBottom
@@ -65,12 +77,27 @@ export default function Edit({ attributes, setAttributes }) {
 						/>
 					)}
 
+					{showSuffix && (
+						<TextControl
+							__nextHasNoMarginBottom
+							__next40pxDefaultSize
+							label={__(
+								'suffix',
+								'page-not-found-block'
+							)}
+							value={suffix || ''}
+							onChange={(value) =>
+								setAttributes({ suffix: value })
+							}
+						/>
+					)}
+
 				</PanelBody>
 			</InspectorControls>
 
 			<p {...useBlockProps()}>
 				{__(
-					'Page Not Found Block – hello from the editor!',
+					'Page slug',
 					'page-not-found-block'
 				)}
 			</p>

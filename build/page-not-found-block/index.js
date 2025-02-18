@@ -74,6 +74,12 @@ function Edit({
           onChange: () => setAttributes({
             showPrefix: !showPrefix
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.ToggleControl, {
+          checked: !!showSuffix,
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Show Suffix', 'page-not-found--block'),
+          onChange: () => setAttributes({
+            showSuffix: !showSuffix
+          })
         }), showPrefix && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
           __nextHasNoMarginBottom: true,
           __next40pxDefaultSize: true,
@@ -82,11 +88,19 @@ function Edit({
           onChange: value => setAttributes({
             prefix: value
           })
+        }), showSuffix && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          __nextHasNoMarginBottom: true,
+          __next40pxDefaultSize: true,
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('suffix', 'page-not-found-block'),
+          value: suffix || '',
+          onChange: value => setAttributes({
+            suffix: value
+          })
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
       ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Page Not Found Block – hello from the editor!', 'page-not-found-block')
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Page slug', 'page-not-found-block')
     })]
   });
 }
