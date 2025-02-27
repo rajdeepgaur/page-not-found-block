@@ -25,6 +25,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function create_block_page_not_found_block_block_init() {
-	register_block_type( __DIR__ . '/build/page-not-found-block' );
+	register_block_type( __DIR__ . '/build' );
 }
 add_action( 'init', 'create_block_page_not_found_block_block_init' );
