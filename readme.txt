@@ -26,6 +26,5 @@ This block is particularly useful for **custom 404 pages** to inform users what 
 
 To clone this repository and set it up in your local WordPress environment, run:
 
-```sh
 git clone https://github.com/yourusername/404-slug-block.git
 cd 404-slug-block
