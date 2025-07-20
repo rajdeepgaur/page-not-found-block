@@ -20,7 +20,3 @@ Ideal for creating user-friendly "Page Not Found" templates in block themes. You
 2. Activate the plugin via **Plugins → Installed Plugins**
 3. Use the block editor to insert the **Page Not Found** block.
 
-== Changelog ==
-
-= 0.1.0 =
-* Release
